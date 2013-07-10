@@ -8,9 +8,9 @@ app.get('/', function(request, response) {
   var buf = new Buffer(2596);  
   fs.readFile('index.html', function (err, data) {
     if (err) throw err;
-     buf.write(data, "utf-8");
+      response.send(data);
    });  
-  response.send(buf.toString('utf-8'));
+
 });
 
 var port = process.env.PORT || 5000;
